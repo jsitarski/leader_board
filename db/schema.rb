@@ -21,10 +21,8 @@ ActiveRecord::Schema.define(:version => 20130211160924) do
   end
 
   create_table "fans_leader_boards", :force => true do |t|
-    t.integer  "fan_id"
-    t.integer  "leader_board_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer "fan_id"
+    t.integer "leader_board_id"
   end
 
   create_table "leader_boards", :force => true do |t|
