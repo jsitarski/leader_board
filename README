@@ -1,0 +1,1 @@
+Leader Board is a very simple gaming leader board.  It will track a top-ten scored in redis for a given leader board of game scores that are persisted in a sql database.  The leader boards can be watched by a fan, which are updated using pub/sub.
