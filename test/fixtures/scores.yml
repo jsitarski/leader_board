@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player: MyString
+  leaderboard_id: 1
+  points: 1
+
+two:
+  player: MyString
+  leaderboard_id: 1
+  points: 1

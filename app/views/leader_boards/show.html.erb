@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Game:</b>
+  <%= @leader_board.game %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @leader_board.description %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @leader_board.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_leader_board_path(@leader_board) %> |
+<%= link_to 'Back', leader_boards_path %>

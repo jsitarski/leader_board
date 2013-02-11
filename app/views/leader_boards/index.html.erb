@@ -1,0 +1,27 @@
+<h1>Listing leader_boards</h1>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @leader_boards.each do |leader_board| %>
+  <tr>
+    <td><%= leader_board.game %></td>
+    <td><%= leader_board.description %></td>
+    <td><%= leader_board.date %></td>
+    <td><%= link_to 'Show', leader_board %></td>
+    <td><%= link_to 'Edit', edit_leader_board_path(leader_board) %></td>
+    <td><%= link_to 'Destroy', leader_board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Leader board', new_leader_board_path %>
