@@ -16,8 +16,8 @@
     <%= f.text_field :player %>
   </div>
   <div class="field">
-    <%= f.label :leaderboard_id %><br />
-    <%= f.number_field :leaderboard_id %>
+    <%= f.label  :leader_board_id %><br />
+    <%= f.select :leader_board_id, options_from_collection_for_select(LeaderBoard.all, :id, :game, @score.leader_board_id) %>
   </div>
   <div class="field">
     <%= f.label :points %><br />

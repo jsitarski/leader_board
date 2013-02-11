@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Player</th>
-    <th>Leaderboard</th>
+    <th>Leader Board</th>
     <th>Points</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @scores.each do |score| %>
   <tr>
     <td><%= score.player %></td>
-    <td><%= score.leaderboard_id %></td>
+    <td><%= link_to score.leader_board.game, score.leader_board %></td>
     <td><%= score.points %></td>
     <td><%= link_to 'Show', score %></td>
     <td><%= link_to 'Edit', edit_score_path(score) %></td>
