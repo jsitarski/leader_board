@@ -1,3 +1,4 @@
 class Score < ActiveRecord::Base
-  attr_accessible :leaderboard_id, :player, :points
+  belongs_to :leader_board
+  attr_accessible :player, :points
 end
