@@ -3,7 +3,6 @@ class CreateFans < ActiveRecord::Migration
     create_table :fans do |t|
       t.string :name
       t.string :hometown
-
       t.timestamps
     end
   end
