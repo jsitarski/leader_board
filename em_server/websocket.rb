@@ -28,7 +28,7 @@ end
  
 # Creating a thread for the redis subscribe block
 Thread.new do
-  @redis.subscribe('leader_board:1:channel') do |on|
+  @redis.subscribe('leader_boards:channel') do |on|
     # When a message is published to 'ws'
     on.message do |chan, msg|
      puts "sending message: #{msg}"
