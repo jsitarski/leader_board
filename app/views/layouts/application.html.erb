@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<ul>
+  <li><%= link_to "Fans", fans_path %></li>
+  <li><%= link_to "All Leader boards", leader_boards_path %></li>
+  <li><%= link_to "Scores", scores_path %></li>
+</ul>
 <%= yield %>
 
 </body>

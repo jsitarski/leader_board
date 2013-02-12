@@ -1,0 +1,21 @@
+<h1>Leader Boards for <%= link_to @fan.name, @fan %></h1>
+<%= form_tag update_multiple_fan_leader_boards_path(:id => @fan.id.to_s), :method => :put do -%>
+  <table id="leader_boards">
+    <thead>
+      <tr>
+        <th>Game</th>
+        <th>Followed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @leader_boards.each do |leader_board| -%>
+        <tr class="leader_board">
+          <td><%= leader_board.game %></td>
+          <td><%= check_box "leader_boards[#{leader_board.id}]","[followed]",
+                            {:checked => @fan.follows?(leader_board)}, 'true', 'false' %></td>         
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+  <%= submit_tag :save %>
+<% end -%>

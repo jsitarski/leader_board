@@ -1,9 +1,15 @@
 Leaderboard::Application.routes.draw do
-  resources :fans
 
-
-  resources :leader_boards
-
+  resources :leader_boards do
+    get :top_10_scores
+  end
+  resources :fans do
+    resources :leader_boards, :controller => "fan_leader_boards" do
+      collection do
+        put :update_multiple
+      end
+    end
+  end
 
   resources :scores
 

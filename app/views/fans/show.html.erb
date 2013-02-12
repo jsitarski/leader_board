@@ -10,6 +10,14 @@
   <%= @fan.hometown %>
 </p>
 
+<div id='leader_boards'>
+  <% @fan.leader_boards.each do |leader_board| %>
+    <div class='leader_board'>
+      <%= render :partial => 'leader_boards/leader_board', :locals => {:leader_board => leader_board } %>
+    </div>
+  <% end %>
+  <%= link_to "Choose Leader Boards to follow", fan_leader_boards_path(:fan_id => @fan.id) %>
+</div>
 
 <%= link_to 'Edit', edit_fan_path(@fan) %> |
 <%= link_to 'Back', fans_path %>

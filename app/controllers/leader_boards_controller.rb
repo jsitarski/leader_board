@@ -9,6 +9,11 @@ class LeaderBoardsController < ApplicationController
       format.json { render json: @leader_boards }
     end
   end
+  
+  def top_10_scores
+    @leader_board = LeaderBoard.find(params[:leader_board_id])
+    render :partial => 'leader_boards/leader_board', :locals => {:leader_board => @leader_board}
+  end
 
   # GET /leader_boards/1
   # GET /leader_boards/1.json

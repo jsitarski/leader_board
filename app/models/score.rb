@@ -6,7 +6,7 @@ class Score < ActiveRecord::Base
 
   def add_to_leaderboard
     $redis.zadd self.leader_board.redis_key(:scores), self.points, self.id
-    $redis.publish self.leader_board.redis_key(:channel), "{'leader_board_id' : #{self.leader_board.id},  'id' : #{self.id}}"
+    $redis.publish 'leader_boards:channel', "{\"leader_board_id\" : #{self.leader_board.id}}"
   end
   
   # helper method to generate redis keys

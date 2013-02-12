@@ -4,7 +4,7 @@ class Fan < ActiveRecord::Base
   
   # follow a leader_board
   def follow!(leader_board)
-    self.leader_boards << leader_board
+    self.leader_boards << leader_board unless self.leader_boards.include? leader_board
     $redis.multi do
       $redis.sadd self.redis_key(:following), leader_board.id
       $redis.sadd leader_board.redis_key(:followers), self.id
@@ -24,6 +24,10 @@ class Fan < ActiveRecord::Base
   def following
     leader_board_ids = $redis.smembers(self.redis_key(:following))
     LeaderBoard.where(:id => leader_board_ids)
+  end
+  
+  def follows?(leader_board)
+    $redis.smembers(self.redis_key(:following)).include? leader_board.id.to_s
   end
   
   # helper method to generate redis keys

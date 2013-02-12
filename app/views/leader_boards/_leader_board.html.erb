@@ -1,0 +1,25 @@
+<div id="leader_board_<%=leader_board.id%>">
+  <p>
+    <b>Game:</b>
+    <%= leader_board.game %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= leader_board.description %>
+  </p>
+
+  <p>
+    <b>Date:</b>
+    <%= leader_board.date %>
+  </p>
+
+  <div class='scores'>
+    <p>Scores</p>
+    <ol>
+      <% leader_board.top_10_scores.each do |score| %>
+        <li><%= score.player %> - <%= score.points%></li>
+      <% end %>
+    </ol>
+  </div>
+</div>

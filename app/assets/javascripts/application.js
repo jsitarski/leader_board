@@ -14,5 +14,22 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+var refresh = function(id) {
+	console.log('#leader_board_'+id);	
+	$.ajax({
+	    url: '/leader_boards/'+id+'/top_10_scores',
+	    type: "GET",
+	    success: function(result) {
+				console.log(result);
+	    	$('#leader_board_'+id).replaceWith(result);         
+	    }
+	});
+}
+
+
 websocket = new WebSocket("ws://localhost:8081");
-websocket.onmessage = function(evt) { console.log(evt.data); };
+websocket.onmessage = function(evt) { 
+	console.log(evt.data); 
+	refresh(JSON.parse(evt.data).leader_board_id);
+};
