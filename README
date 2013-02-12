@@ -1,1 +1,3 @@
 Leader Board is a very simple gaming leader board.  It will track a top-ten scored in redis for a given leader board of game scores that are persisted in a sql database.  The leader boards can be watched by a fan, which are updated using pub/sub.
+
+To start the eventmachine server for websockets to subscribe to the leaderboard channel, execute the em_server/websocket.rb file with either ruby at command line or in irb by loading the file.
