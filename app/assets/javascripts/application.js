@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+websocket = new WebSocket("ws://localhost:8081");
+websocket.onmessage = function(evt) { console.log(evt.data); };
